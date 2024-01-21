@@ -1,8 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
+import numpy as np
 
 N = 10
 
@@ -408,6 +404,18 @@ def nextMoveMatrix():
         out_list.append(temp_row)
     return out_list
 
+
+def getAllCombo():
+    all_combo = []
+    for x in range(N+1):
+        for y in range(N+1):
+            for z in range(N+1):
+                if x!=y and y!=z and x!=z:
+                    temp_vector = np.zeros(N+1) - 1
+                    temp_vector[x] = 0
+                    temp_vector[y] = temp_vector[z] = 1
+                    all_combo.append( temp_vector )
+    return all_combo
 
 # In[2]:
 
